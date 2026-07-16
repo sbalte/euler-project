@@ -2,14 +2,12 @@ package com.vtech.euler.project
 
 import com.vtech.euler.project.Problem15.ALLOWED_MOVE.DOWN
 import com.vtech.euler.project.Problem15.ALLOWED_MOVE.RIGHT
-import com.vtech.euler.project.Problem15.GRID_SIZE
 import com.vtech.euler.project.Problem15.latticePaths
 import kotlin.concurrent.atomics.AtomicLong
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
 import kotlin.concurrent.atomics.incrementAndFetch
 
 object Problem15 {
-    val GRID_SIZE = 20U to 20U
     enum class ALLOWED_MOVE { DOWN, RIGHT }
     context(gridSize: Pair<UInt, UInt>, move: ALLOWED_MOVE)
     private fun canMove(currPoint: Pair<Int, Int>,): Boolean = when(move) {
@@ -55,8 +53,9 @@ object Problem15 {
 fun main() {
     /**
      * Solution: Num routes possible w/ grid size (20, 20) is: 137,846,528,820
-     * It took 15h 10m 55s to finish. Need a better solution [ parallelize ]
+     * It took 15h 10m 55s to finish 20 X 20 grid. Need a better solution [ parallelize ]
      */
+    val GRID_SIZE = 10U to 10U
     context(GRID_SIZE) {
         println("Num routes possible w/ grid size $GRID_SIZE is: ${latticePaths(0 to 0,)}")
     }
