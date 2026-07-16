@@ -5,8 +5,8 @@ inline fun <R> Number.fold(initial: R, operation: (acc: R, Number, Int) -> R): R
         val ZERO = 0; val TEN = 10
         var tq = quotient
         var result = accumulator
-        while ((quotient.first / TEN).let { (it to (quotient.first % TEN).toInt()).also { p -> tq = p } }.first > ZERO)
-            result = operation(accumulator, tq.first, tq.second)
+        while ((tq.first / TEN).let { (it to (tq.first % TEN).toInt()).also { p -> tq = p } }.let { p -> p.first > ZERO || p.second > ZERO })
+            result = operation(result, tq.first, tq.second)
         return result
     }
 

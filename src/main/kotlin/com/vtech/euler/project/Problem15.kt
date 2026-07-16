@@ -50,6 +50,7 @@ object Problem15 {
     }
 }
 
+
 fun main() {
     /**
      * Solution: Num routes possible w/ grid size (20, 20) is: 137,846,528,820
