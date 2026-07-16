@@ -7,6 +7,7 @@ import kotlin.concurrent.atomics.AtomicLong
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
 import kotlin.concurrent.atomics.incrementAndFetch
 
+@Suppress("ClassName")
 object Problem15 {
     enum class ALLOWED_MOVE { DOWN, RIGHT }
     context(gridSize: Pair<UInt, UInt>, move: ALLOWED_MOVE)
