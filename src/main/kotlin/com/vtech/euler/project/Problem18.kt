@@ -3,7 +3,6 @@ package com.vtech.euler.project
 import com.vtech.euler.project.Problem18.inputNum
 import com.vtech.euler.project.Problem18.inputTest
 import com.vtech.euler.project.Problem18.maximumPathSum
-import com.vtech.euler.project.Problem18.parseInput
 
 object Problem18 {
     val inputTest = """
