@@ -36,15 +36,6 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-kotlin {
-	compilerOptions {
-		freeCompilerArgs.addAll("-Xjsr305=strict",
-			"-Xannotation-default-target=param-property",
-			"-Xcontext-parameters"
-		)
-	}
-}
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 }

@@ -1,3 +1,5 @@
+@file:Suppress("LocalVariableName")
+
 package com.vtech.euler.project
 
 import com.vtech.euler.project.Problem15.ALLOWED_MOVE.DOWN

@@ -8,7 +8,7 @@ object Problem16 {
     fun powerDigitSum(baseNum: Int, powerNum: Int): Long =
         baseNum.toDouble().pow(powerNum.toDouble()).toLong().apply {
             println("$baseNum ^ $powerNum = $this")
-        }.fold(0L){ acc, q, r ->
+        }.fold(0L){ acc, _, r ->
             acc + r
         }
 }

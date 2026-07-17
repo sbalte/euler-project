@@ -1,3 +1,5 @@
+@file:Suppress("unused", "LocalVariableName")
+
 package com.vtech
 
 inline fun <R> Number.fold(initial: R, operation: (acc: R, Number, Int) -> R): R =
