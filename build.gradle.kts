@@ -17,6 +17,8 @@ repositories {
 dependencies {
 //	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
+	implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.5.1")
 	//vavr
 	implementation("io.vavr:vavr:1.0.1")
 	//arrow-kt
@@ -34,6 +36,14 @@ dependencies {
 //	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+kotlin {
+	sourceSets {
+		dependencies {
+			implementation("org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.8.0")
+		}
+	}
 }
 
 tasks.withType<Test> {

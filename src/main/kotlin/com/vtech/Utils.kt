@@ -2,6 +2,28 @@
 
 package com.vtech
 
+import java.math.BigInteger
+
+inline fun <R> ULong.fold(initial: R, operation: (acc: R, ULong, ULong) -> R): R =
+    (initial to (this to 0UL)).let { (accumulator, quotient) ->
+        val ZERO = 0UL; val TEN = 10UL
+        var tq = quotient
+        var result = accumulator
+        while ((tq.first / TEN).let { (it to (tq.first % TEN)).also { p -> tq = p } }.let { p -> p.first > ZERO || p.second > ZERO })
+            result = operation(result, tq.first, tq.second)
+        return result
+    }
+
+inline fun <R> BigInteger.foldBI(initial: R, operation: (acc: R, BigInteger, BigInteger) -> R): R =
+    (initial to (this to 0.toBigInteger())).let { (accumulator, quotient) ->
+        val ZERO = 0.toBigInteger(); val TEN = 10.toBigInteger()
+        var tq = quotient
+        var result = accumulator
+        while ((tq.first / TEN).let { (it to (tq.first % TEN)).also { p -> tq = p } }.let { p -> p.first > ZERO || p.second > ZERO })
+            result = operation(result, tq.first, tq.second)
+        return result
+    }
+
 inline fun <R> Number.fold(initial: R, operation: (acc: R, Number, Int) -> R): R =
     (initial to (this.toLong() to 0)).let { (accumulator, quotient) ->
         val ZERO = 0; val TEN = 10
